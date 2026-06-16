@@ -1583,7 +1583,9 @@ ubtu24cis_ownership_adjust: true
 ubtu24cis_suid_sgid_adjust: false
 
 ## Control 7.2.10 - Ensure local interactive user dot files access is configured
-# This variable is a toggle foe enabling/disabling the automated modification of
+# This variable is a toggle for enabling/disabling the automated modification of
 # permissions on dot files.
 # Possible values are `true` and `false`.
 ubtu24cis_dotperm_ansiblemanaged: true
+# This variable allows to exclude only necessary files (i.e. ['.xinitrc'])
+ubtu24cis_dotfile_exclusions: []

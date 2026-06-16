@@ -335,7 +335,7 @@
     - name: "7.2.10 | AUDIT | Ensure local interactive user dot files access is configured"
       ansible.builtin.shell: |
         set -o pipefail
-        find {{ prelim_interactive_users_home.stdout_lines | list | join(' ') }} -name "\.*" -type f
+        find {{ prelim_interactive_users_home.stdout_lines | list | join(' ') }} -name "\.*" -type f{% for f in ubtu24cis_dotfile_exclusions %} ! -name "{{ f }}"{% endfor %}
       args:
         executable: /bin/bash
       changed_when: false
